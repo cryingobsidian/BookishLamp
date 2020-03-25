@@ -33,9 +33,17 @@ public class BookishLamp {
 
         while (!window.shouldClose()) {
             GL15.glBegin(GL15.GL_TRIANGLES);
-            GL15.glVertex2f(-1f, -1f);
-            GL15.glVertex2f(0f, 1f);
-            GL15.glVertex2f(1f, -1f);
+
+            GL15.glColor3f(1f, 0f, 0f);
+            GL15.glVertex2f(-0.5f, 0.5f);
+            GL15.glVertex2f(0.5f, 0.5f);
+            GL15.glVertex2f(-0.5f, -0.5f);
+
+            GL15.glColor3f(0f, 0f, 1f);
+            GL15.glVertex2f(0.5f, -0.5f);
+            GL15.glVertex2f(-0.5f, -0.5f);
+            GL15.glVertex2f(0.5f, 0.5f);
+
             GL15.glEnd();
 
             window.update();
