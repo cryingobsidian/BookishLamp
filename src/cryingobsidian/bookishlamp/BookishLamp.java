@@ -45,6 +45,7 @@ public class BookishLamp {
             timer += delta;
             if (timer >= 1000) {
                 System.out.println("fps: " + fps);
+                window.setTitle("BookishLamp fps:" + fps);
                 timer -= 1000;
                 fps = 0;
             }
