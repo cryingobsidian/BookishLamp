@@ -2,6 +2,7 @@ package cryingobsidian.bookishlamp;
 
 import org.lwjgl.Version;
 import org.lwjgl.opengl.GL;
+import org.lwjgl.opengl.GL15;
 
 import static org.lwjgl.opengl.GL11.glClearColor;
 
@@ -31,6 +32,12 @@ public class BookishLamp {
         glClearColor(0.5f, 0.5f, 0.5f, 0.0f);
 
         while (!window.shouldClose()) {
+            GL15.glBegin(GL15.GL_TRIANGLES);
+            GL15.glVertex2f(-1f, -1f);
+            GL15.glVertex2f(0f, 1f);
+            GL15.glVertex2f(1f, -1f);
+            GL15.glEnd();
+
             window.update();
         }
     }
