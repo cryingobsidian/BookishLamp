@@ -86,4 +86,8 @@ public class Window {
         glfwSetErrorCallback(null).free();
     }
 
+    public void setTitle(String title) {
+        glfwSetWindowTitle(window, title);
+    }
+
 }
