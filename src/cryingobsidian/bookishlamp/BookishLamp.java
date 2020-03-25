@@ -45,9 +45,10 @@ public class BookishLamp {
         glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);
         glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE);
 
-        window = glfwCreateWindow(300, 300, "Hello World!", NULL, NULL);
-        if (window == NULL)
+        window = glfwCreateWindow(300, 300, "BookishLamp", NULL, NULL);
+        if (window == NULL) {
             throw new RuntimeException("Failed to create the GLFW window");
+        }
 
         glfwSetKeyCallback(window, (window, key, scancode, action, mods) -> {
             if (key == GLFW_KEY_ESCAPE && action == GLFW_RELEASE)
@@ -78,7 +79,7 @@ public class BookishLamp {
     private void loop() {
         GL.createCapabilities();
 
-        glClearColor(1.0f, 0.0f, 0.0f, 0.0f);
+        glClearColor(0.5f, 0.5f, 0.5f, 0.0f);
 
         while (!glfwWindowShouldClose(window)) {
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // clear the framebuffer
