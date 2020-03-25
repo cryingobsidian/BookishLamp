@@ -27,12 +27,7 @@ public class BookishLamp {
 
         init();
         loop();
-
-        glfwFreeCallbacks(window);
-        glfwDestroyWindow(window);
-
-        glfwTerminate();
-        glfwSetErrorCallback(null).free();
+        cleanup();
     }
 
     private void init() {
@@ -88,6 +83,14 @@ public class BookishLamp {
 
             glfwPollEvents();
         }
+    }
+
+    private void cleanup() {
+        glfwFreeCallbacks(window);
+        glfwDestroyWindow(window);
+
+        glfwTerminate();
+        glfwSetErrorCallback(null).free();
     }
 
 }
